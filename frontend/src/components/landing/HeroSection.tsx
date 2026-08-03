@@ -43,7 +43,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Visual Dashboard Mockup */}
-          <div className="flex-1 relative w-full max-w-[520px] lg:max-w-none perspective-1000 z-10 overflow-hidden pb-8 lg:pb-0">
+          <div className="flex-1 relative w-full max-w-[520px] md:max-w-2xl lg:max-w-none perspective-1000 z-10 overflow-hidden md:overflow-visible pb-8 lg:pb-0">
             <div className="relative transform lg:rotate-y-[-10deg] lg:rotate-x-[5deg] transition-transform duration-500 hover:rotate-0">
               
               {/* Main Map Panel */}
@@ -75,7 +75,7 @@ const HeroSection = () => {
               </div>
 
               {/* Floating Active Class Card */}
-              <div className="absolute left-2 md:-left-6 top-10 md:top-16 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 w-[210px] md:w-64 md:animate-float">
+              <div className="absolute left-2 md:-left-6 top-10 md:top-16 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 w-[210px] md:w-64 animate-none md:animate-float">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><Users className="w-5 h-5"/></div>
                   <div>
@@ -90,7 +90,7 @@ const HeroSection = () => {
               </div>
 
               {/* Floating Bus Location Card */}
-              <div className="absolute right-2 md:-right-8 top-[46%] md:top-1/2 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 w-[200px] md:w-60 md:animate-float-delay-1">
+              <div className="absolute right-2 md:-right-8 top-[46%] md:top-1/2 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 w-[200px] md:w-60 animate-none md:animate-float-delay-1">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg"><Bus className="w-5 h-5"/></div>
                   <div>
@@ -105,7 +105,7 @@ const HeroSection = () => {
               </div>
 
               {/* Emergency Alert Card */}
-              <div className="absolute left-4 md:left-10 bottom-0 md:-bottom-6 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 w-[230px] md:w-64 md:animate-float-delay-2">
+              <div className="absolute left-4 md:left-10 bottom-0 md:-bottom-6 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 w-[230px] md:w-64 animate-none md:animate-float-delay-2">
                  <div className="flex items-start gap-3">
                   <div className="p-2 bg-red-50 text-red-600 rounded-lg mt-1"><Bell className="w-5 h-5"/></div>
                   <div>
