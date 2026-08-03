@@ -1,28 +1,30 @@
-import { BookOpen, Bus, Calendar, MapPin } from 'lucide-react';
+import { Users, BookOpen, MapPin, Bus, Car, Calendar } from 'lucide-react';
 
 const statusItems = [
-  { icon: <BookOpen className="w-4 h-4" />, count: "18", label: "Active Classes", color: "text-blue-700", bg: "bg-blue-50" },
-  { icon: <MapPin className="w-4 h-4" />, count: "12", label: "Available Rooms", color: "text-emerald-700", bg: "bg-emerald-50" },
-  { icon: <Bus className="w-4 h-4" />, count: "4", label: "Buses Running", color: "text-amber-700", bg: "bg-amber-50" },
-  { icon: <Calendar className="w-4 h-4" />, count: "3", label: "Events Today", color: "text-cyan-700", bg: "bg-cyan-50" }
+  { icon: <Users className="w-5 h-5" />, count: "2,480", label: "Students Online", color: "text-blue-600", bg: "bg-blue-100" },
+  { icon: <BookOpen className="w-5 h-5" />, count: "18", label: "Active Classes", color: "text-emerald-600", bg: "bg-emerald-100" },
+  { icon: <MapPin className="w-5 h-5" />, count: "12", label: "Available Rooms", color: "text-violet-600", bg: "bg-violet-100" },
+  { icon: <Bus className="w-5 h-5" />, count: "4", label: "Buses Running", color: "text-amber-600", bg: "bg-amber-100" },
+  { icon: <Car className="w-5 h-5" />, count: "87%", label: "Parking Occupied", color: "text-rose-600", bg: "bg-rose-100" },
+  { icon: <Calendar className="w-5 h-5" />, count: "3", label: "Events Today", color: "text-cyan-600", bg: "bg-cyan-100" }
 ];
 
 const LiveStatusBar = () => {
   return (
-    <div className="bg-slate-50 border-y border-slate-200 overflow-hidden py-3 relative z-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6">
+    <div className="bg-white border-y border-slate-200 overflow-hidden py-4 shadow-sm relative z-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex overflow-x-auto hide-scrollbar gap-8 md:gap-12 items-center justify-start md:justify-between">
           {statusItems.map((item, idx) => (
-            <div key={idx} className="flex items-center justify-center sm:justify-start gap-2.5">
-              <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${item.bg} ${item.color}`}>
+            <div key={idx} className="flex items-center gap-3 shrink-0 group">
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center ${item.bg} ${item.color} group-hover:scale-110 transition-transform`}>
                 {item.icon}
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-mono font-bold text-base text-slate-950 leading-none">{item.count}</span>
-                  <span className="flex h-1.5 w-1.5 rounded-full bg-green-500" />
+                  <span className="font-mono font-bold text-xl text-slate-900 leading-none">{item.count}</span>
+                  <span className="flex h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse"></span>
                 </div>
-                <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide mt-0.5">{item.label}</span>
+                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">{item.label}</span>
               </div>
             </div>
           ))}
