@@ -45,27 +45,24 @@ const HeroSection = () => {
           {/* Right Visual Dashboard Mockup */}
           <div className="flex-1 relative w-full max-w-[390px] md:max-w-2xl lg:max-w-none perspective-1000 z-10 pb-4 md:pb-8 lg:pb-0">
             <div className="md:hidden bg-white rounded-[24px] shadow-xl border border-slate-100 overflow-hidden">
-              <div className="h-11 bg-slate-50 border-b border-slate-100 flex items-center px-4 gap-2">
+              <div className="h-11 bg-white border-b border-slate-100 flex items-center px-4 gap-2">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400" />
                   <div className="w-3 h-3 rounded-full bg-amber-400" />
                   <div className="w-3 h-3 rounded-full bg-green-400" />
                 </div>
-                <div className="ml-3 text-[10px] font-mono text-slate-400 bg-white px-2.5 py-1 rounded border border-slate-200 truncate">
+                <div className="ml-3 text-[10px] font-mono text-slate-400 bg-slate-50 px-3 py-1 rounded border border-slate-200 truncate">
                   campustwin.local/dashboard
                 </div>
               </div>
 
-              <div className="relative h-[260px] bg-slate-50">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:34px_34px] opacity-60" />
-                <div className="absolute left-[18%] top-[25%] w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+              <div className="relative h-[300px] bg-slate-50 overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:34px_34px] opacity-65" />
+                <div className="absolute left-[26%] top-[24%] w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center border border-blue-200">
                   <span className="w-3 h-3 rounded-full bg-blue-600" />
                 </div>
-                <div className="absolute right-[16%] top-[42%] w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center">
-                  <span className="w-3 h-3 rounded-full bg-emerald-600" />
-                </div>
 
-                <div className="absolute left-4 right-4 bottom-4 rounded-2xl bg-white border border-slate-100 shadow-lg p-4">
+                <div className="absolute left-4 right-4 bottom-5 rounded-[20px] bg-white border border-slate-100 shadow-lg p-4">
                   <div className="flex items-center justify-between gap-3 mb-4">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-blue-50 text-blue-600 rounded-xl">
@@ -76,7 +73,7 @@ const HeroSection = () => {
                         <p className="text-xs text-slate-500">Software Engineering</p>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-green-600">Running</span>
+                    <span className="shrink-0 text-xs font-bold text-green-600">Running</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
