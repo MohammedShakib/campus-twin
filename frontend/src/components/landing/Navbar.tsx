@@ -30,7 +30,7 @@ const Navbar = () => {
             <img
               src={campusTwinLogo}
               alt="CampusTwin logo"
-              className="w-10 h-10 rounded-xl object-cover shadow-md shadow-blue-600/20"
+              className="w-10 h-10 object-contain"
             />
             <span className="font-extrabold text-xl tracking-tight text-slate-900">
               CampusTwin

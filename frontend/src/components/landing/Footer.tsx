@@ -11,7 +11,7 @@ const Footer = () => {
               <img
                 src={campusTwinLogo}
                 alt="CampusTwin logo"
-                className="w-8 h-8 rounded-lg object-cover"
+                className="w-8 h-8 object-contain"
               />
               <span className="font-bold text-lg tracking-tight text-white">CampusTwin</span>
             </div>
