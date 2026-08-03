@@ -56,34 +56,64 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="relative h-[300px] bg-slate-50 overflow-hidden">
+              <div className="relative h-[320px] bg-slate-50 overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:34px_34px] opacity-65" />
-                <div className="absolute left-[26%] top-[24%] w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center border border-blue-200">
+                <div className="absolute left-[34%] top-[28%] w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center border border-blue-200">
                   <span className="w-3 h-3 rounded-full bg-blue-600" />
                 </div>
+                <div className="absolute right-[17%] top-[44%] w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border border-emerald-200">
+                  <span className="w-3 h-3 rounded-full bg-emerald-600" />
+                </div>
 
-                <div className="absolute left-4 right-4 bottom-5 rounded-[20px] bg-white border border-slate-100 shadow-lg p-4">
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-blue-50 text-blue-600 rounded-xl">
-                        <Users className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-sm text-slate-900">Room 405</h4>
-                        <p className="text-xs text-slate-500">Software Engineering</p>
-                      </div>
+                <div className="absolute left-3 top-9 w-[218px] bg-white p-3 rounded-2xl shadow-lg border border-slate-100">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                      <Users className="w-5 h-5" />
                     </div>
-                    <span className="shrink-0 text-xs font-bold text-green-600">Running</span>
+                    <div className="min-w-0">
+                      <h4 className="font-bold text-sm text-slate-900">Room 405</h4>
+                      <p className="text-xs text-slate-500">Software Engineering</p>
+                    </div>
                   </div>
+                  <div className="flex justify-between items-center text-[11px] font-mono bg-slate-50 p-2 rounded-lg">
+                    <span className="text-slate-600">43 / 60 Students</span>
+                    <span className="text-green-600 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                      Running
+                    </span>
+                  </div>
+                </div>
 
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-xl bg-slate-50 p-3">
-                      <p className="text-xs text-slate-500 mb-1">Bus 02</p>
-                      <p className="text-sm font-bold text-slate-900">ETA 4m</p>
+                <div className="absolute right-3 top-[122px] w-[178px] bg-white p-3 rounded-2xl shadow-lg border border-slate-100">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+                      <Bus className="w-5 h-5" />
                     </div>
-                    <div className="rounded-xl bg-slate-50 p-3">
-                      <p className="text-xs text-slate-500 mb-1">Alert</p>
-                      <p className="text-sm font-bold text-slate-900">Weather</p>
+                    <div className="min-w-0">
+                      <h4 className="font-bold text-sm text-slate-900">Bus 02</h4>
+                      <p className="text-xs text-slate-500">Library Route</p>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center text-[11px] bg-slate-50 p-2 rounded-lg font-mono">
+                    <span className="text-slate-600 flex items-center gap-1">
+                      <MapPin className="w-3 h-3" />
+                      Gate 2
+                    </span>
+                    <span className="text-blue-600 font-bold">ETA: 4m</span>
+                  </div>
+                </div>
+
+                <div className="absolute left-7 bottom-4 w-[230px] bg-white p-3 rounded-2xl shadow-lg border border-slate-100">
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 bg-red-50 text-red-600 rounded-lg mt-0.5">
+                      <Bell className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <h4 className="font-bold text-sm text-slate-900">Weather Alert</h4>
+                        <span className="text-[10px] uppercase font-bold text-red-600 bg-red-100 px-1.5 rounded">High</span>
+                      </div>
+                      <p className="text-xs text-slate-500 leading-tight">Heavy rain expected. Events moved indoors.</p>
                     </div>
                   </div>
                 </div>
