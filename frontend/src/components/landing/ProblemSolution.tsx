@@ -1,16 +1,16 @@
 import { Bell, BookOpen, Bus, CheckCircle2, Clock, LayoutDashboard, RadioTower, TriangleAlert } from 'lucide-react';
 
 const problems = [
-  { icon: LayoutDashboard, text: 'Disconnected campus services' },
-  { icon: Clock, text: 'No real-time operational information' },
-  { icon: RadioTower, text: 'Slow communication between users and administrators' },
+  { icon: LayoutDashboard, text: 'Campus services are managed separately' },
+  { icon: Clock, text: 'Students cannot access live operational information' },
+  { icon: RadioTower, text: 'Important updates are often delayed or missed' },
 ];
 
 const overview = [
   { icon: BookOpen, label: 'Active classes', value: '18', status: 'Running', color: 'text-blue-700 bg-blue-50' },
   { icon: CheckCircle2, label: 'Available rooms', value: '12', status: 'Open', color: 'text-emerald-700 bg-emerald-50' },
   { icon: Bus, label: 'Bus status', value: '4', status: 'On route', color: 'text-amber-700 bg-amber-50' },
-  { icon: Bell, label: 'Emergency notification', value: 'Ready', status: 'All roles', color: 'text-red-700 bg-red-50' },
+  { icon: Bell, label: 'Latest notice', value: 'Ready', status: 'Updated', color: 'text-red-700 bg-red-50' },
 ];
 
 const ProblemSolution = () => {
@@ -20,7 +20,7 @@ const ProblemSolution = () => {
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-950 mb-3">Campus Information Should Not Be Scattered</h2>
           <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
-            CampusTwin brings classrooms, attendance, transportation, events, parking, and emergency communication into one connected platform.
+            CampusTwin connects classroom activities, attendance, transportation, events, and important campus updates in one accessible platform.
           </p>
         </div>
 

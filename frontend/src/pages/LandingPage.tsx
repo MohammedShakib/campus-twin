@@ -6,7 +6,6 @@ import ProblemSolution from '../components/landing/ProblemSolution';
 import CoreFeatures from '../components/landing/CoreFeatures';
 import InteractivePreview from '../components/landing/InteractivePreview';
 import RoleTabs from '../components/landing/RoleTabs';
-import ProjectDetails from '../components/landing/ProjectDetails';
 import FinalCTA from '../components/landing/FinalCTA';
 import Footer from '../components/landing/Footer';
 
@@ -30,7 +29,6 @@ const LandingPage = () => {
         <CoreFeatures />
         <InteractivePreview />
         <RoleTabs />
-        <ProjectDetails />
         <FinalCTA />
       </main>
 

@@ -14,20 +14,20 @@ const Footer = () => {
               <span className="font-bold text-lg tracking-tight text-white">CampusTwin</span>
             </div>
             <p className="text-slate-400 text-sm">
-              A real-time campus operations platform for an academic software project.
+              A connected platform for real-time campus information and services.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-400">
             <a href="#features" className="hover:text-white transition-colors">Features</a>
-            <a href="#project-details" className="hover:text-white transition-colors">Project Details</a>
-            <a href="#documentation" className="hover:text-white transition-colors">Documentation</a>
-            <Link to="/login" className="hover:text-white transition-colors">Login</Link>
+            <Link to="/demo" className="hover:text-white transition-colors">Dashboard</Link>
+            <Link to="/documentation" className="hover:text-white transition-colors">Documentation</Link>
+            <Link to="/login" className="hover:text-white transition-colors">Sign In</Link>
           </div>
         </div>
 
         <div className="border-t border-slate-800 mt-6 pt-5 text-sm text-slate-500">
-          <p>© 2026 CampusTwin. Advanced Object-Oriented Programming Project.</p>
+          <p>© 2026 CampusTwin. All rights reserved.</p>
         </div>
       </div>
     </footer>
