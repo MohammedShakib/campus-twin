@@ -1,5 +1,5 @@
-import { Map } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import campusTwinLogo from '../../assets/CampusTwin-logo.png';
 
 const Footer = () => {
   return (
@@ -8,9 +8,11 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <div className="bg-blue-700 p-1.5 rounded-lg">
-                <Map className="w-5 h-5 text-white" />
-              </div>
+              <img
+                src={campusTwinLogo}
+                alt="CampusTwin logo"
+                className="w-8 h-8 rounded-lg object-cover"
+              />
               <span className="font-bold text-lg tracking-tight text-white">CampusTwin</span>
             </div>
             <p className="text-slate-400 text-sm">

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Map, Sun, Menu, X } from 'lucide-react';
+import { Sun, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import campusTwinLogo from '../../assets/CampusTwin-logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,9 +27,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Left: Logo */}
           <div className="flex items-center gap-2">
-            <div className="bg-blue-600 p-2 rounded-xl shadow-md shadow-blue-600/20">
-              <Map className="w-6 h-6 text-white" />
-            </div>
+            <img
+              src={campusTwinLogo}
+              alt="CampusTwin logo"
+              className="w-10 h-10 rounded-xl object-cover shadow-md shadow-blue-600/20"
+            />
             <span className="font-extrabold text-xl tracking-tight text-slate-900">
               CampusTwin
             </span>
