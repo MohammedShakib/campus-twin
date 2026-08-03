@@ -1,88 +1,98 @@
-import { ArrowRight, AlertTriangle, XCircle, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ClipboardList, FileSpreadsheet, RadioTower, TriangleAlert } from 'lucide-react';
+
+const scatteredItems = [
+  { icon: ClipboardList, title: 'Notice board updates', detail: 'Room changes and announcements posted separately' },
+  { icon: FileSpreadsheet, title: 'Manual attendance sheets', detail: 'Teacher records need later consolidation' },
+  { icon: RadioTower, title: 'Bus and parking updates', detail: 'Operational status is not visible in one place' },
+];
+
+const operations = [
+  { label: 'Active classes', value: '18', state: 'Live' },
+  { label: 'Available rooms', value: '12', state: 'Updated' },
+  { label: 'Buses running', value: '4', state: 'On route' },
+  { label: 'Open complaints', value: '7', state: 'Assigned' },
+];
 
 const ProblemSolution = () => {
   return (
-    <section className="py-24 bg-[#F8FAFC]">
+    <section className="py-24 bg-[#F6F8FB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Campus Information Should Not Be Scattered</h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">Bridging the gap between physical infrastructure and digital management.</p>
+        <div className="text-center mb-14">
+          <p className="text-sm font-bold text-blue-700 uppercase tracking-wider mb-3">Campus operations view</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-950 mb-4">Campus Information Should Not Be Scattered</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">
+            CampusTwin keeps academic and operational updates visible from one structured system.
+          </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-          
-          {/* Problems (Left) */}
-          <div className="flex-1 bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-full -z-10"></div>
-            <div className="inline-flex items-center gap-2 text-red-600 font-bold mb-8 uppercase tracking-wider text-sm">
-              <AlertTriangle className="w-5 h-5" /> The Old Way
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-8">Disconnected & Delayed</h3>
-            
-            <ul className="space-y-6">
-              {[
-                "Separate, disconnected attendance systems",
-                "No live classroom availability tracking",
-                "Unclear bus arrival information",
-                "Delayed emergency communication",
-                "Manual room reservation processes"
-              ].map((text, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                  <span className="text-slate-600 font-medium">{text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Transformation Arrow (Middle - Desktop only) */}
-          <div className="hidden lg:flex flex-col items-center justify-center px-4">
-            <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center border-4 border-[#F8FAFC]">
-              <ArrowRight className="w-6 h-6 text-blue-600" />
-            </div>
-          </div>
-
-          {/* Solution (Right) */}
-          <div className="flex-1 bg-slate-900 text-white p-8 md:p-12 rounded-3xl relative overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(37,99,235,0.1)_0%,rgba(6,182,212,0.1)_55%,rgba(124,58,237,0.1)_100%)] z-0"></div>
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 text-emerald-400 font-bold mb-8 uppercase tracking-wider text-sm">
-                <CheckCircle2 className="w-5 h-5" /> The CampusTwin Way
+        <div className="grid lg:grid-cols-[1fr_auto_1.2fr] gap-8 items-center">
+          <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="flex items-center gap-3 border-b border-slate-100 pb-4 mb-5">
+              <div className="w-10 h-10 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center">
+                <TriangleAlert className="w-5 h-5" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-6">Centralized & Real-Time</h3>
-              <p className="text-slate-300 font-medium leading-relaxed mb-8 text-lg">
-                CampusTwin connects academic, administrative, transportation and security operations through one intelligent real-time digital platform.
-              </p>
+              <div>
+                <h3 className="font-bold text-slate-950">Disconnected Campus Data</h3>
+                <p className="text-sm text-slate-500">Information sits across notices, calls, sheets and chats.</p>
+              </div>
+            </div>
 
-              {/* Visual Flow diagram */}
-              <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 backdrop-blur-sm">
-                <div className="flex flex-wrap gap-2 justify-center mb-6">
-                  {["Students", "Teachers", "Security", "Admin", "Drivers"].map((role, i) => (
-                    <span key={i} className="px-3 py-1 bg-slate-700 rounded-full text-xs font-semibold text-slate-300">{role}</span>
-                  ))}
+            <div className="space-y-4">
+              {scatteredItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="flex gap-3 rounded-md border border-slate-100 bg-slate-50 p-4">
+                    <Icon className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-bold text-slate-800">{item.title}</p>
+                      <p className="text-sm text-slate-500">{item.detail}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="hidden lg:flex w-12 h-12 rounded-full border border-blue-100 bg-white text-blue-600 items-center justify-center shadow-sm">
+            <ArrowRight className="w-5 h-5" />
+          </div>
+
+          <div className="rounded-lg border border-slate-200 bg-white shadow-sm overflow-hidden">
+            <div className="border-b border-slate-200 bg-slate-950 px-6 py-4 text-white">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <h3 className="font-bold">CampusTwin Operations Board</h3>
+                  <p className="text-sm text-slate-300">Centralized academic and service status</p>
                 </div>
-                <div className="flex justify-center mb-4">
-                  <ArrowRight className="w-5 h-5 text-slate-500 rotate-90" />
-                </div>
-                <div className="bg-[linear-gradient(135deg,#2563EB_0%,#06B6D4_55%,#7C3AED_100%)] p-[1px] rounded-xl">
-                  <div className="bg-slate-900 rounded-xl p-3 text-center">
-                    <span className="font-bold text-white">CampusTwin Platform</span>
+                <span className="rounded-md bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-300">Live</span>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-px bg-slate-200">
+              {operations.map((item) => (
+                <div key={item.label} className="bg-white p-5">
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500">{item.label}</p>
+                  <div className="mt-3 flex items-end justify-between">
+                    <span className="text-3xl font-extrabold text-slate-950">{item.value}</span>
+                    <span className="inline-flex items-center gap-1.5 rounded-md bg-slate-100 px-2 py-1 text-xs font-bold text-slate-600">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                      {item.state}
+                    </span>
                   </div>
                 </div>
-                <div className="flex justify-center my-4">
-                  <ArrowRight className="w-5 h-5 text-slate-500 rotate-90" />
-                </div>
-                <div className="text-center">
-                   <span className="inline-flex items-center gap-1.5 text-emerald-400 font-bold text-sm">
-                    <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Live Data + Real-Time Updates
-                  </span>
-                </div>
+              ))}
+            </div>
+
+            <div className="px-6 py-4 bg-slate-50">
+              <div className="h-2 rounded-full bg-slate-200 overflow-hidden">
+                <div className="h-full w-[78%] bg-blue-600" />
+              </div>
+              <div className="mt-2 flex justify-between text-xs font-semibold text-slate-500">
+                <span>Daily campus sync</span>
+                <span>78% complete</span>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

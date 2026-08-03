@@ -27,7 +27,7 @@ const Footer = () => {
               <li><a href="#roles" className="hover:text-blue-400 transition-colors">User Roles</a></li>
               <li><a href="#technology" className="hover:text-blue-400 transition-colors">Technology</a></li>
               <li><a href="#campus-map" className="hover:text-blue-400 transition-colors">Campus Map</a></li>
-              <li><a href="#ai-assistant" className="hover:text-blue-400 transition-colors">AI Assistant</a></li>
+              <li><a href="#information-search" className="hover:text-blue-400 transition-colors">Information Search</a></li>
             </ul>
           </div>
 

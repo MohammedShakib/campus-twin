@@ -1,84 +1,46 @@
-import { Radio, Webhook, Activity, Clock, ShieldCheck, Server } from 'lucide-react';
+import { Activity, Clock, Radio, Server, ShieldCheck, Webhook } from 'lucide-react';
+
+const technologies = [
+  { title: 'Spring Boot REST API', desc: 'Structured module endpoints and service-layer business rules.', icon: Server },
+  { title: 'Spring WebSocket', desc: 'Real-time browser updates for class, bus, parking and alerts.', icon: Webhook },
+  { title: 'Java Socket Client', desc: 'Driver-side status broadcast with server acknowledgement.', icon: Radio },
+  { title: 'Background Threads', desc: 'Bus simulation, notifications and multi-client communication.', icon: Activity },
+  { title: 'Spring Scheduler', desc: 'Automated reminders, event state updates and routine campus jobs.', icon: Clock },
+  { title: 'JWT Authentication', desc: 'Role-based access and stateless API authorization.', icon: ShieldCheck },
+];
 
 const TechStack = () => {
-  const technologies = [
-    {
-      title: "Spring WebSocket",
-      desc: "Instant browser updates without page refresh using STOMP.",
-      icon: Webhook,
-      color: "text-blue-400",
-      bg: "bg-blue-500/10",
-      border: "border-blue-500/20"
-    },
-    {
-      title: "Java Socket Programming",
-      desc: "Raw Socket and ServerSocket communication for bus driver updates.",
-      icon: Radio,
-      color: "text-emerald-400",
-      bg: "bg-emerald-500/10",
-      border: "border-emerald-500/20"
-    },
-    {
-      title: "Background Threads",
-      desc: "Bus simulation, notification processing and multi-client communication.",
-      icon: Activity,
-      color: "text-violet-400",
-      bg: "bg-violet-500/10",
-      border: "border-violet-500/20"
-    },
-    {
-      title: "Spring Scheduler",
-      desc: "Automated reminders, event updates and scheduled campus processes.",
-      icon: Clock,
-      color: "text-amber-400",
-      bg: "bg-amber-500/10",
-      border: "border-amber-500/20"
-    },
-    {
-      title: "Secure REST APIs",
-      desc: "Structured communication between React frontend and Spring Boot backend.",
-      icon: Server,
-      color: "text-rose-400",
-      bg: "bg-rose-500/10",
-      border: "border-rose-500/20"
-    },
-    {
-      title: "JWT Authentication",
-      desc: "Stateless, secure token-based authentication and role authorization.",
-      icon: ShieldCheck,
-      color: "text-cyan-400",
-      bg: "bg-cyan-500/10",
-      border: "border-cyan-500/20"
-    }
-  ];
-
   return (
-    <section id="technology" className="py-24 bg-[#07111F] text-white relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-900/20 rounded-full blur-[100px] pointer-events-none mix-blend-screen"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Built for Real-Time Campus Operations</h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto font-medium">Powered by enterprise-grade Spring Boot architecture and real-time protocols.</p>
+    <section id="technology" className="py-24 bg-slate-950 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+          <div>
+            <p className="text-sm font-bold text-blue-300 uppercase tracking-wider mb-3">Backend architecture</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Built for Real-Time Campus Operations</h2>
+            <p className="text-lg text-slate-400 max-w-2xl font-medium">
+              The technical stack is shown as system responsibilities, not decorative feature blocks.
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-800 bg-slate-900 px-4 py-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Runtime model</p>
+            <p className="text-2xl font-extrabold">REST + Socket</p>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {technologies.map((tech, idx) => {
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden rounded-lg border border-slate-800 bg-slate-800">
+          {technologies.map((tech) => {
             const Icon = tech.icon;
             return (
-            <div key={idx} className={`p-8 rounded-2xl bg-slate-800/40 border ${tech.border} backdrop-blur-sm hover:bg-slate-800/60 transition-colors`}>
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${tech.bg} ${tech.color}`}>
-                <Icon className="w-6 h-6" />
+              <div key={tech.title} className="bg-slate-950 p-6">
+                <div className="w-11 h-11 rounded-lg bg-slate-900 border border-slate-800 text-blue-300 flex items-center justify-center mb-5">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{tech.title}</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">{tech.desc}</p>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{tech.title}</h3>
-              <p className="text-slate-400 leading-relaxed text-sm">{tech.desc}</p>
-            </div>
-          )})}
+            );
+          })}
         </div>
-
       </div>
     </section>
   );

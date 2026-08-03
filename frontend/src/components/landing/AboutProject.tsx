@@ -2,7 +2,7 @@ import { GitBranch, GraduationCap } from 'lucide-react';
 
 const AboutProject = () => {
   return (
-    <section className="py-24 bg-slate-50">
+    <section id="about" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           
@@ -35,7 +35,7 @@ const AboutProject = () => {
           </div>
 
           <div className="mt-12">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold text-slate-700 bg-white border border-slate-300 rounded-full hover:bg-slate-50 transition-colors">
+            <a href="https://github.com/MohammedShakib/campus-twin" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 transition-colors">
               <GitBranch className="w-5 h-5" /> View Source Code
             </a>
           </div>
