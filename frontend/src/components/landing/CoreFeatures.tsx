@@ -26,17 +26,17 @@ const CoreFeatures = () => {
 
   return (
     <section id="features" className="py-9 md:py-12 lg:py-16 bg-[#F8FAFC]">
-      <div className="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1160px] mx-auto px-5 md:px-6 lg:px-8">
         
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-7 md:mb-12 lg:mb-16 gap-4 md:gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold text-slate-900 mb-3">Everything Your Campus Needs, Connected</h2>
-            <p className="text-base text-slate-600 font-medium">One intelligent platform for academic activities, campus operations and real-time communication.</p>
+            <h2 className="text-[30px] md:text-3xl font-bold text-slate-900 mb-3 leading-tight">Everything Your Campus Needs, Connected</h2>
+            <p className="text-[15px] md:text-base text-slate-600 font-medium">One intelligent platform for academic activities, campus operations and real-time communication.</p>
           </div>
           {!showAll && (
             <button 
               onClick={() => setShowAll(true)}
-              className="inline-flex items-center text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group self-start md:self-end"
+              className="inline-flex min-h-11 items-center text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group self-start md:self-end"
             >
               Explore all campus services
               <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -45,23 +45,23 @@ const CoreFeatures = () => {
         </div>
 
         {/* Primary Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-12">
+        <div className="grid grid-cols-1 min-[420px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-5 md:gap-y-12 mb-8 md:mb-12">
           {primaryFeatures.map((feature, idx) => {
             const Icon = feature.icon;
             return (
-            <div key={idx} className="group hover:-translate-y-0.5 transition-transform duration-300 rounded-[14px] p-2 -m-2 hover:bg-blue-50/50">
-              <div className="w-10 h-10 rounded-[10px] bg-blue-50 flex items-center justify-center mb-4 text-blue-600">
-                <Icon className="w-5 h-5" />
+            <div key={idx} className="group min-h-[148px] md:min-h-0 hover:-translate-y-0.5 transition-transform duration-300 rounded-[16px] p-3 -m-1 md:p-2 md:-m-2 hover:bg-blue-50/50">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-[12px] bg-blue-50 flex items-center justify-center mb-3 md:mb-4 text-blue-600">
+                <Icon className="w-[18px] h-[18px] md:w-5 md:h-5" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{feature.desc}</p>
+              <h3 className="text-[16px] md:text-lg font-bold text-slate-900 mb-1.5 md:mb-2">{feature.title}</h3>
+              <p className="text-slate-600 text-[13px] min-[420px]:text-sm leading-relaxed line-clamp-2 md:line-clamp-none">{feature.desc}</p>
             </div>
           )})}
         </div>
 
         {/* Secondary Features Grid (Expandable) */}
         {showAll && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-in fade-in duration-500 pt-8 border-t border-slate-200">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 animate-in fade-in duration-500 pt-6 md:pt-8 border-t border-slate-200">
             {secondaryFeatures.map((feature, idx) => {
               const Icon = feature.icon;
               return (

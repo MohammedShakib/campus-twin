@@ -19,18 +19,18 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 backdrop-blur-lg border-b border-slate-200 py-3 shadow-sm'
-          : 'bg-transparent py-5'
+          ? 'bg-white/90 backdrop-blur-lg border-b border-slate-200 py-2 md:py-3 shadow-sm'
+          : 'bg-white/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none py-2 md:py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center min-h-[42px] md:min-h-0">
           {/* Left: Logo */}
           <div className="flex items-center gap-2">
             <img
               src={campusTwinLogo}
               alt="CampusTwin logo"
-              className="w-10 h-10 object-contain"
+              className="w-11 h-11 md:w-10 md:h-10 object-contain"
             />
             <span className="font-extrabold text-xl tracking-tight text-slate-900">
               CampusTwin
@@ -66,7 +66,9 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-600 p-2"
+              className="text-slate-700 w-11 h-11 rounded-xl flex items-center justify-center hover:bg-slate-100 transition-colors"
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -76,13 +78,18 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 absolute w-full left-0 top-full shadow-lg">
-          <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
-            <a href="#home" className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Home</a>
-            <a href="#features" className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Features</a>
-            <a href="#how-it-works" className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">How It Works</a>
-            <a href="#technology" className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Technology</a>
-            <Link to="/login" className="block px-3 py-2 text-base font-medium text-blue-600 hover:bg-blue-50 rounded-md">Login</Link>
+        <div className="md:hidden bg-white border-y border-slate-200 absolute w-full left-0 top-full shadow-lg">
+          <div className="px-5 pt-3 pb-5 space-y-1 flex flex-col">
+            <a href="#home" className="flex items-center min-h-11 px-3 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl">Home</a>
+            <a href="#features" className="flex items-center min-h-11 px-3 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl">Features</a>
+            <a href="#campus-map" className="flex items-center min-h-11 px-3 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl">Campus Preview</a>
+            <a href="#roles" className="flex items-center min-h-11 px-3 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl">User Roles</a>
+            <div className="h-px bg-slate-100 my-2" />
+            <button className="flex items-center gap-2 min-h-11 px-3 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl">
+              <Sun className="w-5 h-5 text-slate-500" />
+              Theme
+            </button>
+            <Link to="/login" className="flex items-center min-h-11 px-3 text-base font-semibold text-blue-600 hover:bg-blue-50 rounded-xl">Login</Link>
           </div>
         </div>
       )}

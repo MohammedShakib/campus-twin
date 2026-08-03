@@ -4,24 +4,24 @@ import { ArrowRight } from 'lucide-react';
 const FinalCTA = () => {
   return (
     <section className="py-9 md:py-12 lg:py-16 bg-white">
-      <div className="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[linear-gradient(135deg,#eff6ff_0%,#e0e7ff_100%)] rounded-[14px] px-8 py-10 md:px-12 md:py-12 border border-blue-100 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="max-w-[1160px] mx-auto px-5 md:px-6 lg:px-8">
+        <div className="bg-[linear-gradient(135deg,#eff6ff_0%,#e0e7ff_100%)] rounded-[16px] md:rounded-[14px] px-5 py-6 md:px-12 md:py-12 border border-blue-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 md:gap-8">
           
           <div className="md:max-w-xl">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            <h2 className="text-[26px] md:text-3xl font-bold text-slate-900 mb-2 md:mb-3 leading-tight">
               Ready to Experience a Smarter Campus?
             </h2>
-            <p className="text-base text-slate-600 font-medium">
+            <p className="text-[15px] md:text-base text-slate-600 font-medium leading-relaxed">
               Explore a live digital campus where classrooms, transportation, events and campus services stay connected in real time.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full md:w-auto">
-            <Link to="/demo" className="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-blue-600 rounded-[10px] hover:bg-blue-700 transition-colors w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 shrink-0 w-full md:w-auto">
+            <Link to="/demo" className="inline-flex min-h-[48px] items-center justify-center px-6 py-3 text-sm font-bold text-white bg-blue-600 rounded-[14px] md:rounded-[10px] hover:bg-blue-700 transition-colors w-full sm:w-auto">
               Explore Demo
               <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
-            <Link to="/login" className="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-slate-700 bg-white border border-slate-200 rounded-[10px] hover:bg-slate-50 transition-colors w-full sm:w-auto">
+            <Link to="/login" className="inline-flex min-h-[46px] items-center justify-center px-6 py-3 text-sm font-bold text-slate-700 bg-white/80 border border-slate-200 rounded-[14px] md:rounded-[10px] hover:bg-slate-50 transition-colors w-full sm:w-auto">
               Sign In
             </Link>
           </div>
