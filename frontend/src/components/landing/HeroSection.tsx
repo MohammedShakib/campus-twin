@@ -43,20 +43,20 @@ const HeroSection = () => {
           </div>
 
           {/* Right Visual Dashboard Mockup */}
-          <div className="flex-1 relative w-full max-w-[520px] md:max-w-2xl lg:max-w-none perspective-1000 z-10 overflow-hidden md:overflow-visible pb-8 lg:pb-0">
+          <div className="flex-1 relative w-full max-w-[390px] md:max-w-2xl lg:max-w-none perspective-1000 z-10 overflow-hidden md:overflow-visible pb-4 md:pb-8 lg:pb-0">
             <div className="relative transform lg:rotate-y-[-10deg] lg:rotate-x-[5deg] transition-transform duration-500 hover:rotate-0">
               
               {/* Main Map Panel */}
-              <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden relative">
-                <div className="h-12 bg-slate-50 border-b border-slate-100 flex items-center px-4 gap-2">
+              <div className="bg-white rounded-[22px] md:rounded-3xl shadow-xl md:shadow-2xl border border-slate-100 overflow-hidden relative">
+                <div className="h-11 md:h-12 bg-slate-50 border-b border-slate-100 flex items-center px-4 gap-2">
                   <div className="flex gap-1.5">
                     <div className="w-3 h-3 rounded-full bg-red-400" />
                     <div className="w-3 h-3 rounded-full bg-amber-400" />
                     <div className="w-3 h-3 rounded-full bg-green-400" />
                   </div>
-                  <div className="ml-4 text-xs font-mono text-slate-400 bg-white px-3 py-1 rounded border border-slate-200">campustwin.local/dashboard</div>
+                  <div className="ml-3 md:ml-4 text-[10px] md:text-xs font-mono text-slate-400 bg-white px-2.5 md:px-3 py-1 rounded border border-slate-200 truncate">campustwin.local/dashboard</div>
                 </div>
-                <div className="p-2 relative h-[240px] md:h-[400px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-90">
+                <div className="p-2 relative h-[270px] md:h-[400px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-90">
                   {/* Subtle Grid Map Placeholder */}
                   <div className="absolute inset-0 border-[0.5px] border-slate-200 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:40px_40px]"></div>
                   
@@ -75,37 +75,37 @@ const HeroSection = () => {
               </div>
 
               {/* Floating Active Class Card */}
-              <div className="absolute left-2 md:-left-6 top-10 md:top-16 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 w-[210px] md:w-64 animate-none md:animate-float">
+              <div className="absolute left-3 md:-left-6 top-14 md:top-16 bg-white p-3 md:p-4 rounded-2xl shadow-lg md:shadow-xl border border-slate-100 w-[200px] md:w-64 animate-none md:animate-float">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><Users className="w-5 h-5"/></div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="font-bold text-sm text-slate-900">Room 405</h4>
                     <p className="text-xs text-slate-500">Software Engineering</p>
                   </div>
                 </div>
-                <div className="flex justify-between items-center text-xs font-mono bg-slate-50 p-2 rounded-lg">
+                <div className="flex justify-between items-center text-[11px] md:text-xs font-mono bg-slate-50 p-2 rounded-lg">
                   <span className="text-slate-600">43 / 60 Students</span>
                   <span className="text-green-600 flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Running</span>
                 </div>
               </div>
 
               {/* Floating Bus Location Card */}
-              <div className="absolute right-2 md:-right-8 top-[46%] md:top-1/2 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 w-[200px] md:w-60 animate-none md:animate-float-delay-1">
+              <div className="absolute right-3 md:-right-8 top-[48%] md:top-1/2 bg-white p-3 md:p-4 rounded-2xl shadow-lg md:shadow-xl border border-slate-100 w-[178px] md:w-60 animate-none md:animate-float-delay-1">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg"><Bus className="w-5 h-5"/></div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="font-bold text-sm text-slate-900">Bus 02</h4>
                     <p className="text-xs text-slate-500">Library Route</p>
                   </div>
                 </div>
-                <div className="flex justify-between items-center text-xs bg-slate-50 p-2 rounded-lg font-mono">
+                <div className="flex justify-between items-center text-[11px] md:text-xs bg-slate-50 p-2 rounded-lg font-mono">
                   <span className="text-slate-600 flex items-center gap-1"><MapPin className="w-3 h-3"/> Gate 2</span>
                   <span className="text-blue-600 font-bold">ETA: 4m</span>
                 </div>
               </div>
 
               {/* Emergency Alert Card */}
-              <div className="absolute left-4 md:left-10 bottom-0 md:-bottom-6 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 w-[230px] md:w-64 animate-none md:animate-float-delay-2">
+              <div className="absolute left-1/2 md:left-10 -translate-x-1/2 md:translate-x-0 bottom-4 md:-bottom-6 bg-white p-3 md:p-4 rounded-2xl shadow-lg md:shadow-xl border border-slate-100 w-[240px] md:w-64 animate-none md:animate-float-delay-2">
                  <div className="flex items-start gap-3">
                   <div className="p-2 bg-red-50 text-red-600 rounded-lg mt-1"><Bell className="w-5 h-5"/></div>
                   <div>
@@ -113,7 +113,7 @@ const HeroSection = () => {
                        <h4 className="font-bold text-sm text-slate-900">Weather Alert</h4>
                        <span className="text-[10px] uppercase font-bold text-red-600 bg-red-100 px-1.5 rounded">High</span>
                     </div>
-                    <p className="text-xs text-slate-500 leading-tight">Heavy rain expected. All outdoor events moved indoors.</p>
+                    <p className="text-xs text-slate-500 leading-tight">Heavy rain expected. Events moved indoors.</p>
                   </div>
                 </div>
               </div>
