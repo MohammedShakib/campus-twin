@@ -5,14 +5,8 @@ import LiveStatusBar from '../components/landing/LiveStatusBar';
 import ProblemSolution from '../components/landing/ProblemSolution';
 import CoreFeatures from '../components/landing/CoreFeatures';
 import InteractivePreview from '../components/landing/InteractivePreview';
-import WorkflowSteps from '../components/landing/WorkflowSteps';
 import RoleTabs from '../components/landing/RoleTabs';
-import TechStack from '../components/landing/TechStack';
-import SyllabusMapping from '../components/landing/SyllabusMapping';
-import AnalyticsPreview from '../components/landing/AnalyticsPreview';
-import AIAssistant from '../components/landing/AIAssistant';
-import SecurityAndFuture from '../components/landing/SecurityAndFuture';
-import AboutProject from '../components/landing/AboutProject';
+import ProjectDetails from '../components/landing/ProjectDetails';
 import FinalCTA from '../components/landing/FinalCTA';
 import Footer from '../components/landing/Footer';
 
@@ -35,14 +29,8 @@ const LandingPage = () => {
         <ProblemSolution />
         <CoreFeatures />
         <InteractivePreview />
-        <WorkflowSteps />
         <RoleTabs />
-        <TechStack />
-        <SyllabusMapping />
-        <AnalyticsPreview />
-        <AIAssistant />
-        <SecurityAndFuture />
-        <AboutProject />
+        <ProjectDetails />
         <FinalCTA />
       </main>
 
