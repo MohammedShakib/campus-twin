@@ -3,9 +3,9 @@ import campusTwinLogo from '../../assets/CampusTwin-logo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-slate-300 py-8 border-t border-slate-800">
+    <footer className="bg-slate-950 text-slate-300 py-7 border-t border-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <img
@@ -23,12 +23,12 @@ const Footer = () => {
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-400">
             <a href="#features" className="hover:text-white transition-colors">Features</a>
             <Link to="/demo" className="hover:text-white transition-colors">Dashboard</Link>
-            <Link to="/documentation" className="hover:text-white transition-colors">Documentation</Link>
             <Link to="/login" className="hover:text-white transition-colors">Sign In</Link>
+            <a href="https://github.com/MohammedShakib/campus-twin" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-6 pt-5 text-sm text-slate-500">
+        <div className="border-t border-slate-800 mt-5 pt-4 text-sm text-slate-500">
           <p>© 2026 CampusTwin. All rights reserved.</p>
         </div>
       </div>
