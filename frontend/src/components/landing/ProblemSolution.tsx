@@ -4,14 +4,14 @@ const ProblemSolution = () => {
   return (
     <section className="py-9 md:py-12 lg:py-16 bg-white">
       <div className="max-w-[1160px] mx-auto px-5 md:px-6 lg:px-8">
-        
+
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-24 items-start">
-          
+
           {/* Problems (Left) */}
           <div className="flex-1 lg:w-1/2">
             <h2 className="text-[30px] md:text-3xl font-bold text-slate-900 mb-3 md:mb-4 text-left leading-tight">Campus Information Should Not Be Scattered</h2>
             <p className="text-[15px] md:text-base text-slate-600 font-medium mb-6 md:mb-10 text-left">Bridging the gap between physical infrastructure and digital management.</p>
-            
+
             <div className="space-y-0 divide-y divide-slate-100">
               {[
                 "Separate, disconnected attendance systems",

@@ -27,14 +27,14 @@ const CoreFeatures = () => {
   return (
     <section id="features" className="py-9 md:py-12 lg:py-16 bg-[#F8FAFC]">
       <div className="max-w-[1160px] mx-auto px-5 md:px-6 lg:px-8">
-        
+
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-7 md:mb-12 lg:mb-16 gap-4 md:gap-6">
           <div className="max-w-2xl">
             <h2 className="text-[30px] md:text-3xl font-bold text-slate-900 mb-3 leading-tight">Everything Your Campus Needs, Connected</h2>
             <p className="text-[15px] md:text-base text-slate-600 font-medium">One intelligent platform for academic activities, campus operations and real-time communication.</p>
           </div>
           {!showAll && (
-            <button 
+            <button
               onClick={() => setShowAll(true)}
               className="inline-flex min-h-11 items-center text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group self-start md:self-end"
             >

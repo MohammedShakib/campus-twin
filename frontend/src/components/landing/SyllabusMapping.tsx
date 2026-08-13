@@ -19,7 +19,7 @@ const SyllabusMapping = () => {
   return (
     <section className="py-24 bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="flex flex-col md:flex-row gap-12 items-start">
           <div className="md:w-1/3 sticky top-24">
             <div className="inline-flex items-center justify-center p-3 bg-blue-100 text-blue-600 rounded-2xl mb-6">
@@ -41,7 +41,7 @@ const SyllabusMapping = () => {
                 <div className="px-6 py-4 font-bold text-slate-700 text-sm tracking-wider uppercase">Syllabus Topic</div>
                 <div className="hidden md:block px-6 py-4 font-bold text-slate-700 text-sm tracking-wider uppercase">CampusTwin Implementation</div>
               </div>
-              
+
               <div className="divide-y divide-slate-100">
                 {syllabusData.map((item, idx) => (
                   <div key={idx} className="grid grid-cols-1 md:grid-cols-2 hover:bg-slate-50 transition-colors">

@@ -11,7 +11,7 @@ const HeroSection = () => {
 
       <div className="relative max-w-7xl mx-auto px-5 md:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-          
+
           {/* Left Text Content */}
           <div className="flex-1 text-center lg:text-left z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100/50 border border-blue-200 text-blue-800 text-xs md:text-sm font-semibold mb-5 md:mb-8 backdrop-blur-sm">
@@ -21,16 +21,16 @@ const HeroSection = () => {
               </span>
               Live Software-Based Digital Twin
             </div>
-            
+
             <h1 className="text-[36px] md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-5 md:mb-6 leading-[1.08] md:leading-[1.1]">
               One Campus. <br className="hidden lg:block" />
               One Live <span className="text-transparent bg-clip-text bg-[linear-gradient(135deg,#2563EB_0%,#06B6D4_55%,#7C3AED_100%)]">Digital Experience.</span>
             </h1>
-            
+
             <p className="text-[15px] md:text-xl text-slate-600 mb-7 md:mb-10 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
               CampusTwin connects classrooms, attendance, transportation, parking, events and emergency services through one intelligent real-time platform.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link to="/demo" className="inline-flex min-h-[48px] items-center justify-center px-8 py-3 md:py-4 text-base font-bold text-white bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto group">
                 Explore Live Campus
@@ -121,7 +121,7 @@ const HeroSection = () => {
             </div>
 
             <div className="hidden md:block relative transform lg:rotate-y-[-10deg] lg:rotate-x-[5deg] transition-transform duration-500 hover:rotate-0">
-              
+
               {/* Main Map Panel */}
               <div className="bg-white rounded-[22px] md:rounded-3xl shadow-xl md:shadow-2xl border border-slate-100 overflow-hidden relative">
                 <div className="h-11 md:h-12 bg-slate-50 border-b border-slate-100 flex items-center px-4 gap-2">
@@ -135,7 +135,7 @@ const HeroSection = () => {
                 <div className="p-2 relative h-[270px] md:h-[400px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-90">
                   {/* Subtle Grid Map Placeholder */}
                   <div className="absolute inset-0 border-[0.5px] border-slate-200 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-                  
+
                   {/* Pulsing Nodes */}
                   <div className="absolute top-1/4 left-1/4 animate-pulse">
                     <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center border-2 border-blue-200">

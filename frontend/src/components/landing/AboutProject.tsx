@@ -5,11 +5,11 @@ const AboutProject = () => {
     <section id="about" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          
+
           <div className="inline-flex items-center justify-center p-4 bg-blue-100 text-blue-600 rounded-2xl mb-8">
              <GraduationCap className="w-10 h-10" />
           </div>
-          
+
           <h2 className="text-3xl font-bold text-slate-900 mb-6">About CampusTwin</h2>
           <p className="text-lg text-slate-600 leading-relaxed mb-12">
             CampusTwin is an Advanced Object-Oriented Programming project developed to demonstrate Spring Boot, Java Collections, File I/O, multithreading, socket programming, real-time communication and modern frontend integration through a practical university management system.

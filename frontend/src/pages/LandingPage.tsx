@@ -21,7 +21,7 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-blue-200 selection:text-blue-900">
       <Navbar />
-      
+
       <main>
         <HeroSection />
         <LiveStatusBar />
