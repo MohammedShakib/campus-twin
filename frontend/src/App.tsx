@@ -11,16 +11,9 @@ import SecurityDashboard from './pages/dashboard/SecurityDashboard';
 import AdminDashboard from './pages/dashboard/AdminDashboard';
 import type { User } from './types/dashboard';
 
-// Placeholder for actual login component
-const LoginPage = () => (
-  <div className="min-h-screen flex items-center justify-center bg-slate-50">
-    <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
-      <h1 className="text-2xl font-bold mb-4">Login</h1>
-      <p className="text-slate-600 mb-4">Authentication system will be implemented here.</p>
-      <a href="/dashboard" className="text-blue-600 hover:underline">Go to Dashboard (Mock)</a>
-    </div>
-  </div>
-);
+import LoginPage from './pages/auth/LoginPage';
+import SignupPage from './pages/auth/SignupPage';
+import ForgotPasswordPage from './pages/auth/ForgotPasswordPage';
 
 const DocumentationPage = () => (
   <div className="min-h-screen bg-slate-50">
@@ -58,6 +51,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/documentation" element={<DocumentationPage />} />
 
         {/* Authenticated Dashboard Routes */}
