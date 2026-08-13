@@ -51,26 +51,31 @@ export default function AdminRecentActivity() {
   ];
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm h-full">
+    <div className="bg-white rounded-[14px] border border-slate-200 p-5 shadow-sm">
       <SectionHeader
-        title="Recent System Activity"
-        action={{ label: 'View Logs', href: '/dashboard/logs' }}
+        title="Recent Campus Activity"
       />
 
-      <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[22px] before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent mt-4">
+      <div className="mt-4 flex flex-col gap-3">
         {activities.map((activity) => (
-          <div key={activity.id} className="relative flex items-start gap-4 group">
-            <div className={`flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-full border-4 border-white shadow-sm shrink-0 z-10 ${activity.bgClass} ${activity.colorClass}`}>
-              <activity.icon className="w-4 h-4 md:w-5 md:h-5" />
+          <div key={activity.id} className="flex items-start gap-3">
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-white shadow-sm ${activity.bgClass} ${activity.colorClass}`}>
+              <activity.icon className="w-3.5 h-3.5" />
             </div>
-            <div className="flex-1 pt-1.5 pb-2">
-              <h4 className="text-sm font-semibold text-slate-900 leading-tight">{activity.action}</h4>
-              <p className="text-xs text-slate-500 mt-0.5">{activity.details}</p>
+            <div className="flex-1 min-w-0 pt-0.5">
+              <h4 className="text-[13px] font-semibold text-slate-900 leading-tight truncate">{activity.action}</h4>
+              <div className="flex items-center gap-2 mt-0.5">
+                <span className="text-[11px] font-medium text-slate-500 truncate">{activity.details}</span>
+                <span className="text-[10px] text-slate-400 font-medium shrink-0 ml-auto">{activity.time}</span>
+              </div>
             </div>
-            <span className="text-[10px] font-medium text-slate-400 pt-2 shrink-0">{activity.time}</span>
           </div>
         ))}
       </div>
+
+      <a href="/dashboard/activity" className="block text-center mt-4 text-[13px] font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+        View Activity Log →
+      </a>
     </div>
   );
 }
