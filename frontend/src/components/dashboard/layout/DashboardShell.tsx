@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet, Navigate } from 'react-router-dom';
+import { Outlet, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 import MobileNavigation from './MobileNavigation';
@@ -15,17 +15,44 @@ const MOCK_USER: User = {
   role: 'STUDENT',
 };
 
-// Role switcher only available in development
-const DEBUG_MODE = import.meta.env.DEV;
+const DEMO_ROLE_SWITCHER_ENABLED = true;
+
+const rolePathMap: Record<UserRole, string> = {
+  STUDENT: '/dashboard/student',
+  TEACHER: '/dashboard/teacher',
+  SECURITY: '/dashboard/security',
+  ADMIN: '/dashboard/admin',
+};
+
+function getRoleFromPath(pathname: string): UserRole | null {
+  if (pathname.startsWith('/dashboard/teacher')) return 'TEACHER';
+  if (pathname.startsWith('/dashboard/security')) return 'SECURITY';
+  if (pathname.startsWith('/dashboard/admin')) return 'ADMIN';
+  if (pathname.startsWith('/dashboard/student')) return 'STUDENT';
+  return null;
+}
+
+function getInitialUser(pathname: string): User {
+  const pathRole = getRoleFromPath(pathname);
+  const storedRole = window.localStorage.getItem('campus-twin-demo-role') as UserRole | null;
+  const role = pathRole ?? storedRole ?? MOCK_USER.role;
+
+  return {
+    ...MOCK_USER,
+    role,
+  };
+}
 
 export default function DashboardShell() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isSidebarCollapsed] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
   // Local state for mocking role changes
-  const [currentUser, setCurrentUser] = useState<User>(MOCK_USER);
+  const [currentUser, setCurrentUser] = useState<User>(() => getInitialUser(location.pathname));
 
   // In a real app, you would fetch the user from context/auth
   const isAuthenticated = true; // Mock authentication
@@ -77,17 +104,22 @@ export default function DashboardShell() {
         <main className="flex-1 overflow-y-auto overflow-x-hidden relative">
           <div className="max-w-[1400px] mx-auto p-4 sm:p-6 lg:p-8">
 
-            {/* Debug Role Switcher (Temporary) */}
-            {DEBUG_MODE && (
+            {/* Demo Role Switcher */}
+            {DEMO_ROLE_SWITCHER_ENABLED && (
               <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-xl flex items-center justify-between">
                 <div>
-                  <h3 className="text-yellow-800 font-bold text-sm">Debug Mode</h3>
+                  <h3 className="text-yellow-800 font-bold text-sm">Demo Mode</h3>
                   <p className="text-yellow-700 text-xs">Switch roles to test different dashboard views</p>
                 </div>
                 <select
                   className="bg-white border border-yellow-300 rounded px-3 py-1.5 text-sm outline-none"
                   value={currentUser.role}
-                  onChange={(e) => setCurrentUser({ ...currentUser, role: e.target.value as UserRole })}
+                  onChange={(e) => {
+                    const role = e.target.value as UserRole;
+                    window.localStorage.setItem('campus-twin-demo-role', role);
+                    setCurrentUser({ ...currentUser, role });
+                    navigate(rolePathMap[role], { replace: true });
+                  }}
                 >
                   <option value="STUDENT">Student</option>
                   <option value="TEACHER">Teacher</option>
