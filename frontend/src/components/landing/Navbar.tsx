@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import campusTwinLogo from '../../assets/CampusTwin-logo.png';
 
@@ -39,24 +39,20 @@ const Navbar = () => {
 
           {/* Center: Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Home</a>
-            <a href="#features" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Features</a>
-            <a href="#how-it-works" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">How It Works</a>
-            <a href="#technology" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Technology</a>
-            <a href="#roles" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">User Roles</a>
+            <a href="#home" className="text-[15px] font-semibold text-slate-600 hover:text-blue-600 transition-colors">Home</a>
+            <a href="#features" className="text-[15px] font-semibold text-slate-600 hover:text-blue-600 transition-colors">Features</a>
+            <a href="#campus-map" className="text-[15px] font-semibold text-slate-600 hover:text-blue-600 transition-colors">Campus Live</a>
+            <a href="#roles" className="text-[15px] font-semibold text-slate-600 hover:text-blue-600 transition-colors">User Roles</a>
           </div>
 
           {/* Right: Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="p-2 rounded-full text-slate-500 hover:bg-slate-100 transition-colors">
-              <Sun className="w-5 h-5" />
-            </button>
-            <Link to="/login" className="text-sm font-bold text-slate-700 hover:text-blue-600 px-3 py-2 transition-colors">
+            <Link to="/login" className="text-[15px] font-bold text-slate-700 hover:text-blue-600 px-3 py-2 transition-colors">
               Login
             </Link>
             <Link
               to="/demo"
-              className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30 hover:-translate-y-0.5 transition-all duration-200"
+              className="inline-flex items-center justify-center px-5 py-2.5 text-[15px] font-bold text-white bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30 hover:-translate-y-0.5 transition-all duration-200"
             >
               Explore Live Campus
             </Link>
@@ -85,10 +81,6 @@ const Navbar = () => {
             <a href="#campus-map" className="flex items-center min-h-11 px-3 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl">Campus Preview</a>
             <a href="#roles" className="flex items-center min-h-11 px-3 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl">User Roles</a>
             <div className="h-px bg-slate-100 my-2" />
-            <button className="flex items-center gap-2 min-h-11 px-3 text-base font-semibold text-slate-700 hover:bg-slate-50 rounded-xl">
-              <Sun className="w-5 h-5 text-slate-500" />
-              Theme
-            </button>
             <Link to="/login" className="flex items-center min-h-11 px-3 text-base font-semibold text-blue-600 hover:bg-blue-50 rounded-xl">Login</Link>
           </div>
         </div>

@@ -1,31 +1,38 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FinalCTA = () => {
   return (
-    <section className="py-9 md:py-12 lg:py-16 bg-white">
-      <div className="max-w-[1160px] mx-auto px-5 md:px-6 lg:px-8">
-        <div className="bg-[linear-gradient(135deg,#eff6ff_0%,#e0e7ff_100%)] rounded-[16px] md:rounded-[14px] px-5 py-6 md:px-12 md:py-12 border border-blue-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 md:gap-8">
+    <section className="bg-white py-12 md:py-16 lg:py-20">
+      <div className="mx-auto max-w-[1160px] px-5 md:px-6 lg:px-8">
+        <div className="rounded-[28px] border border-slate-200 bg-[linear-gradient(135deg,#eef4ff_0%,#f8fbff_100%)] px-6 py-8 shadow-[0_28px_60px_-46px_rgba(37,99,235,0.26)] md:px-10 md:py-10">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="text-[32px] font-bold leading-tight text-slate-950 md:text-[40px]">
+                Ready to Experience a Smarter Campus?
+              </h2>
+              <p className="mt-4 text-[15px] leading-7 text-slate-600 md:text-base">
+                Explore classrooms, transport, events and campus services from one connected
+                platform.
+              </p>
+            </div>
 
-          <div className="md:max-w-xl">
-            <h2 className="text-[26px] md:text-3xl font-bold text-slate-900 mb-2 md:mb-3 leading-tight">
-              Ready to Experience a Smarter Campus?
-            </h2>
-            <p className="text-[15px] md:text-base text-slate-600 font-medium leading-relaxed">
-              Explore a live digital campus where classrooms, transportation, events and campus services stay connected in real time.
-            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/demo"
+                className="inline-flex min-h-[50px] items-center justify-center gap-2 rounded-full bg-blue-600 px-6 text-sm font-bold text-white transition-colors hover:bg-blue-700"
+              >
+                Explore Demo
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                to="/login"
+                className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-sm font-bold text-slate-700 transition-colors hover:bg-slate-50"
+              >
+                Sign In
+              </Link>
+            </div>
           </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 shrink-0 w-full md:w-auto">
-            <Link to="/demo" className="inline-flex min-h-[48px] items-center justify-center px-6 py-3 text-sm font-bold text-white bg-blue-600 rounded-[14px] md:rounded-[10px] hover:bg-blue-700 transition-colors w-full sm:w-auto">
-              Explore Demo
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
-            <Link to="/login" className="inline-flex min-h-[46px] items-center justify-center px-6 py-3 text-sm font-bold text-slate-700 bg-white/80 border border-slate-200 rounded-[14px] md:rounded-[10px] hover:bg-slate-50 transition-colors w-full sm:w-auto">
-              Sign In
-            </Link>
-          </div>
-
         </div>
       </div>
     </section>

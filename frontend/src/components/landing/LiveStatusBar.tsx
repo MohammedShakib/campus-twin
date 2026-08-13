@@ -1,36 +1,107 @@
-import { Users, BookOpen, MapPin, Bus, Car, Calendar } from 'lucide-react';
+import {
+  BookOpen,
+  Bus,
+  Calendar,
+  Car,
+  MapPin,
+  TrendingUp,
+  Users,
+} from 'lucide-react';
 
 const statusItems = [
-  { icon: <Users className="w-5 h-5" />, count: "2,480", label: "Students Online", color: "text-blue-600", bg: "bg-blue-100", mobileHidden: true },
-  { icon: <BookOpen className="w-5 h-5" />, count: "18", label: "Active Classes", color: "text-emerald-600", bg: "bg-emerald-100" },
-  { icon: <MapPin className="w-5 h-5" />, count: "12", label: "Available Rooms", color: "text-violet-600", bg: "bg-violet-100" },
-  { icon: <Bus className="w-5 h-5" />, count: "4", label: "Buses Running", color: "text-amber-600", bg: "bg-amber-100" },
-  { icon: <Car className="w-5 h-5" />, count: "87%", label: "Parking Occupied", color: "text-rose-600", bg: "bg-rose-100", mobileHidden: true },
-  { icon: <Calendar className="w-5 h-5" />, count: "3", label: "Events Today", color: "text-cyan-600", bg: "bg-cyan-100" }
+  {
+    label: 'Students Online',
+    count: '2,480',
+    detail: 'Across web and mobile',
+    icon: Users,
+    accent: 'text-blue-600',
+    surface: 'bg-blue-50',
+    border: 'border-blue-100',
+  },
+  {
+    label: 'Active Classes',
+    count: '18',
+    detail: 'Now running live',
+    icon: BookOpen,
+    accent: 'text-emerald-600',
+    surface: 'bg-emerald-50',
+    border: 'border-emerald-100',
+  },
+  {
+    label: 'Available Rooms',
+    count: '12',
+    detail: 'Ready to reserve',
+    icon: MapPin,
+    accent: 'text-violet-600',
+    surface: 'bg-violet-50',
+    border: 'border-violet-100',
+  },
+  {
+    label: 'Buses Running',
+    count: '4',
+    detail: 'Routes synced live',
+    icon: Bus,
+    accent: 'text-amber-600',
+    surface: 'bg-amber-50',
+    border: 'border-amber-100',
+  },
+  {
+    label: 'Parking Occupied',
+    count: '87%',
+    detail: 'Updated every minute',
+    icon: Car,
+    accent: 'text-rose-600',
+    surface: 'bg-rose-50',
+    border: 'border-rose-100',
+  },
+  {
+    label: 'Events Today',
+    count: '3',
+    detail: 'Campus-wide sessions',
+    icon: Calendar,
+    accent: 'text-cyan-600',
+    surface: 'bg-cyan-50',
+    border: 'border-cyan-100',
+  },
 ];
 
 const LiveStatusBar = () => {
   return (
-    <div className="bg-white border-y border-slate-200 overflow-hidden py-4 shadow-sm relative z-20">
-      <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-3 md:flex md:overflow-x-auto md:hide-scrollbar md:gap-12 items-center md:justify-between">
-          {statusItems.map((item, idx) => (
-            <div key={idx} className={`flex items-center gap-3 shrink-0 group ${item.mobileHidden ? 'hidden md:flex' : ''}`}>
-              <div className={`w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center ${item.bg} ${item.color} group-hover:scale-110 transition-transform`}>
-                {item.icon}
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-mono font-bold text-lg md:text-xl text-slate-900 leading-none">{item.count}</span>
-                  <span className="flex h-1.5 w-1.5 rounded-full bg-green-500 md:animate-pulse"></span>
+    <section className="relative z-20 border-y border-slate-200/80 bg-white/95 py-5 shadow-[0_10px_35px_-28px_rgba(15,23,42,0.35)] backdrop-blur">
+      <div className="mx-auto max-w-[1160px] px-5 md:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+          {statusItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.label}
+                className={`group rounded-[18px] border ${item.border} bg-white px-4 py-3.5 transition-transform duration-300 hover:-translate-y-0.5`}
+              >
+                <div className="mb-3 flex items-start justify-between gap-3">
+                  <div
+                    className={`flex h-11 w-11 items-center justify-center rounded-[14px] ${item.surface} ${item.accent}`}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-600">
+                    <TrendingUp className="h-3 w-3" />
+                    Live
+                  </div>
                 </div>
-                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">{item.label}</span>
+                <div className="flex items-end gap-1.5">
+                  <span className="text-[26px] font-black leading-none text-slate-950">{item.count}</span>
+                  <span className="mb-1 h-2 w-2 rounded-full bg-emerald-500" />
+                </div>
+                <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
+                  {item.label}
+                </p>
+                <p className="mt-1 text-xs text-slate-500">{item.detail}</p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
