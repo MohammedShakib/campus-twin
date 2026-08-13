@@ -1,6 +1,4 @@
 import SectionHeader from '../ui/SectionHeader';
-import StatusBadge from '../ui/StatusBadge';
-import { Calendar, Clock, MapPin } from 'lucide-react';
 
 export default function ClassroomReservations() {
   const reservations = [
@@ -22,41 +20,48 @@ export default function ClassroomReservations() {
     }
   ];
 
+  const getStatusBadge = (status: string) => {
+    switch (status) {
+      case 'approved':
+        return <span className="text-[10px] font-bold tracking-wide text-green-700 bg-green-50 px-2 py-0.5 rounded border border-green-200/50 uppercase">Approved</span>;
+      case 'pending':
+        return <span className="text-[10px] font-bold tracking-wide text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200/50 uppercase">Pending</span>;
+      case 'rejected':
+        return <span className="text-[10px] font-bold tracking-wide text-red-700 bg-red-50 px-2 py-0.5 rounded border border-red-200/50 uppercase">Rejected</span>;
+      default:
+        return <span className="text-[10px] font-bold tracking-wide text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200/50 uppercase">{status}</span>;
+    }
+  };
+
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+    <div className="bg-white rounded-[14px] border border-slate-200 p-5 shadow-sm h-full">
       <SectionHeader
         title="Classroom Reservations"
-        action={{ label: 'New Reservation', href: '/dashboard/reservations/new' }}
+        action={{ label: 'New Reservation →', href: '/dashboard/reservations/new' }}
       />
 
-      <div className="space-y-3 mt-2">
+      <div className="flex flex-col mt-2">
         {reservations.map((res) => (
-          <div key={res.id} className="p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-colors">
-            <div className="flex justify-between items-start mb-2">
-              <h4 className="font-bold text-slate-900 flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-blue-600" />
-                {res.room}
-              </h4>
-              <StatusBadge status={res.status === 'approved' ? 'success' : 'warning'}>
-                {res.status.charAt(0).toUpperCase() + res.status.slice(1)}
-              </StatusBadge>
+          <div key={res.id} className="py-3 border-b border-slate-100 last:border-0 group">
+            <div className="flex justify-between items-center mb-1">
+              <h4 className="text-[14px] font-bold text-slate-900">{res.room}</h4>
+              {getStatusBadge(res.status)}
             </div>
 
-            <p className="text-sm text-slate-700 mb-3">{res.purpose}</p>
+            <p className="text-[13px] text-slate-600 font-medium mb-1.5">{res.purpose}</p>
 
-            <div className="flex items-center gap-4 text-xs font-medium text-slate-500">
-              <div className="flex items-center gap-1">
-                <Calendar className="w-3.5 h-3.5" />
-                {res.date}
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" />
-                {res.time}
-              </div>
+            <div className="text-[12px] font-medium text-slate-500">
+              {res.date} <span className="mx-1 opacity-50">•</span> {res.time}
             </div>
           </div>
         ))}
       </div>
+
+      {reservations.length > 2 && (
+        <a href="/dashboard/reservations" className="block text-center mt-2 text-[13px] font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+          View All Reservations →
+        </a>
+      )}
     </div>
   );
 }
