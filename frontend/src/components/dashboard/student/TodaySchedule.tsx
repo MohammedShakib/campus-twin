@@ -1,54 +1,63 @@
 import SectionHeader from '../ui/SectionHeader';
-import StatusBadge from '../ui/StatusBadge';
 import { mockStudentSchedule } from '../../../mocks/dashboardData';
 
 export default function TodaySchedule() {
-  const getStatusColor = (status: string) => {
+  const getStatusBadge = (status: string) => {
     switch (status) {
-      case 'completed': return 'success';
-      case 'starting-soon': return 'warning';
-      case 'upcoming': return 'info';
-      default: return 'neutral';
+      case 'completed':
+        return <span className="text-[11px] font-bold tracking-wide text-green-700 bg-green-50/80 px-2 py-0.5 rounded border border-green-200/50 uppercase">Completed</span>;
+      case 'starting-soon':
+        return <span className="text-[11px] font-bold tracking-wide text-amber-700 bg-amber-50/80 px-2 py-0.5 rounded border border-amber-200/50 uppercase">Starting Soon</span>;
+      case 'upcoming':
+        return <span className="text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50/80 px-2 py-0.5 rounded border border-blue-200/50 uppercase">Upcoming</span>;
+      default:
+        return <span className="text-[11px] font-bold tracking-wide text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200/50 uppercase">{status}</span>;
     }
-  };
-
-  const formatStatusText = (status: string) => {
-    return status.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
   };
 
   return (
     <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm h-full">
       <SectionHeader
         title="Today's Schedule"
-        action={{ label: 'View Full Schedule', href: '/dashboard/schedule' }}
+        action={{ label: 'View Full Schedule →', href: '/dashboard/schedule' }}
       />
 
-      <div className="space-y-0 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
-        {mockStudentSchedule.map((item) => (
-          <div key={item.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active py-4">
-            {/* Timeline dot */}
-            <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-100 text-blue-600 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 absolute left-0 md:left-1/2 -translate-x-1/2">
-              <div className={`w-3 h-3 rounded-full ${item.status === 'completed' ? 'bg-green-500' : item.status === 'starting-soon' ? 'bg-amber-500' : 'bg-blue-500'}`}></div>
-            </div>
+      <div className="mt-2 flex flex-col">
+        {mockStudentSchedule.map((item) => {
+          const isNextClass = item.status === 'starting-soon';
+          return (
+            <div
+              key={item.id}
+              className={`flex flex-col sm:flex-row sm:items-center py-3 px-3 gap-2 sm:gap-4 border-b border-slate-100 last:border-0 ${
+                isNextClass ? 'bg-blue-50/40 rounded-xl border-transparent -mx-3 px-6' : ''
+              }`}
+            >
+              <div className="w-24 shrink-0">
+                <span className="text-sm font-bold text-slate-700">{item.time.split(' - ')[0]}</span>
+              </div>
 
-            {/* Content card */}
-            <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] ml-12 md:ml-0 p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-bold text-slate-700">{item.time}</span>
-                <StatusBadge status={getStatusColor(item.status)}>{formatStatusText(item.status)}</StatusBadge>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-[15px] font-bold text-slate-900 truncate">{item.course}</h4>
               </div>
-              <h4 className="font-bold text-slate-900 mb-1">{item.course}</h4>
-              <div className="flex items-center justify-between text-sm text-slate-500">
-                <span>{item.room}</span>
-                <span>{item.teacher}</span>
+
+              <div className="w-20 shrink-0 text-sm font-medium text-slate-600 hidden sm:block">
+                {item.room}
+              </div>
+
+              <div className="w-24 shrink-0 text-sm text-slate-500 hidden md:block truncate">
+                {item.teacher}
+              </div>
+
+              <div className="w-28 shrink-0 flex sm:justify-end">
+                {getStatusBadge(item.status)}
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {mockStudentSchedule.length === 0 && (
-        <div className="py-8 text-center text-slate-500">
+        <div className="py-8 text-center text-sm text-slate-500 font-medium">
           No more classes today.
         </div>
       )}

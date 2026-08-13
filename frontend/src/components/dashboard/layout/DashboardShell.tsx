@@ -15,8 +15,8 @@ const MOCK_USER: User = {
   role: 'STUDENT',
 };
 
-// Role switcher for testing (we will remove this later or keep it as a debug tool)
-const DEBUG_MODE = true;
+// Role switcher only available in development
+const DEBUG_MODE = import.meta.env.DEV;
 
 export default function DashboardShell() {
   const [isSidebarCollapsed] = useState(false);
